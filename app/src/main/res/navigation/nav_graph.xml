@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.basaran.burakbasarancase.view.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.basaran.burakbasarancase.view.fragments.ProductDetailFragment"
+        android:label="fragment_product_detail"
+        tools:layout="@layout/fragment_product_detail" >
+        <argument
+            android:name="product_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFavFragment"
+        android:name="com.basaran.burakbasarancase.view.fragments.ProductFavFragment"
+        android:label="ProductFavFragment"
+        tools:layout="@layout/fragment_product_fav">
+        <action
+            android:id="@+id/action_productFavFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:enterAnim="@anim/enter"
+            app:exitAnim="@anim/exit"
+            app:popEnterAnim="@anim/pop_enter"
+            app:popExitAnim="@anim/pop_exit"/>
+    </fragment>
+    <fragment
+        android:id="@+id/productBasketFragment"
+        android:name="com.basaran.burakbasarancase.view.fragments.ProductBasketFragment"
+        android:label="ProductBasketFragment"
+        tools:layout="@layout/fragment_product_basket"/>
+</navigation>
